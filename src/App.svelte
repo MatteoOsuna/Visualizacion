@@ -297,9 +297,9 @@
   </div>
 
   <div class="image-wrapper">
-    <img src="/public/images/NFT2.png" alt="Living Of The Art" />
-    <img src="/public/images/NFT1.png" alt="Living Of The Art" />
-    <img src="/public/images/NFT3.png" alt="Living Of The Art" />
+    <img src="/images/NFT2.png" alt="Living Of The Art" />
+    <img src="/images/NFT1.png" alt="Living Of The Art" />
+    <img src="/images/NFT3.png" alt="Living Of The Art" />
   </div>
 </div>
 
@@ -640,7 +640,7 @@
       </div>
       <div class="card-body">
         <div class="card-title-author">
-          <img class="author-avatar" src="/public/images/avatar1.png" alt="JSmith" />
+          <img class="author-avatar" src="/images/avatar1.png" alt="JSmith" />
           <div>
             <h3>Pixel Read</h3>
             <div class="author">@JSmith</div>
