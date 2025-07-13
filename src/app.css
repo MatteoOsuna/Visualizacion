@@ -1,0 +1,1880 @@
+/* 1. Reset y full height */
+html, body, #app {
+  width: 100%;
+  min-height: 100%;
+  max-width: 100%;   /* <--- Arreglado */
+  margin: 0;
+  padding: 0;
+  background: #0d0e20;
+  overflow-x: hidden;
+}
+ 
+/* 1. Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%; /* Asegura que no se salga del viewport */
+  height: 63px;
+  padding: 0 32px;
+  background: rgba(13, 14, 32, 0.50);     /* Fondo oscuro semi-transparente */
+  -webkit-backdrop-filter: blur(16px);     /* Para Safari */          /* Aplica el blur difuso */
+  backdrop-filter: blur(16px);             /* Aplica el blur difuso */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+/* 2. Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #a259ff, #ff0080);
+}
+.logo-text {
+  margin-left: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.logo-highlight {
+  color: #a259ff;
+}
+
+/* 3. Navegación */
+.nav {
+  display: flex;
+  gap: 14rem;
+}
+.nav a {
+  color: #cfd0e0;
+  text-decoration: none;
+  font-size: 1.0rem;
+  transition: color 0.2s;
+}
+.nav a:hover {
+  color: #ff0080;
+}
+
+/* 4. Acciones */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 4a. Buscador */
+.search {
+  display: flex;
+  align-items: center;
+  background: #1b1d36;
+  border-radius: 9999px;
+  padding: 4px 12px;
+}
+.search .icon {
+  width: 16px;
+  height: 16px;
+  color: #6e6f8c;
+}
+.search input {
+  border: none;
+  background: transparent;
+  margin-left: 8px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  width: 160px;
+}
+.search input::placeholder {
+  color: #6e6f8c;
+}
+
+/* 4b. Icono usuario */
+.btn-user {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+.btn-user .icon {
+  width: 20px;
+  height: 20px;
+  color: #cfd0e0;
+}
+.btn-user:hover .icon {
+  color: #ff0080;
+}
+
+/* 4c. Botón “Conectar” */
+.btn-connect {
+  background: linear-gradient(135deg, #a259ff, #ff0080);
+  border: none;
+  border-radius: 8px;
+  padding: 8px  16px; /* Ajusta padding al diseño */
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-connect:hover {
+  opacity: 0.9;
+}
+
+
+/* 2. Fondo degradado que ocupa toda la pantalla */
+
+.full-box {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom right,
+    #000429 80%,
+    #72023a 100%
+  );
+  margin-bottom: 100px; /* Espacio al final */
+  padding: 120px 0; /* Espacio arriba y abajo */
+}
+.text-wrapper {
+  max-width: 60%; /* ajusta al gusto */
+  margin-left: -20%;
+  display: flex;
+  margin-right: 10%;
+  flex-direction: column;   /* apila los títulos y párrafos uno debajo de otro */
+  align-items: flex-start;  /* alinea a la izquierda */
+  gap: 0.5rem;              /* espacio entre líneas */
+  padding-left: 10%;         /* separa un poco del borde izquierdo */
+}
+
+/* Contenedor de la imagen */
+.image-wrapper {
+  position: relative;
+}
+
+
+/* 3. Contenedor de texto en columna */
+/* 4. Título principal sin posicionamiento “manual” */
+.titulo-principal {
+  font-family: '_CameraPlainVariable_83c9a9',
+               '_CameraPlainVariable_Fallback_83c9a9',
+               sans-serif;
+  font-weight: 800;
+  font-size: 6rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* 5. Segundo título con degradado de texto */
+.titulo-principal2 {
+  font-family: '_CameraPlainVariable_83c9a9',
+               '_CameraPlainVariable_Fallback_83c9a9',
+               sans-serif;
+  font-weight: 800;
+  font-size: 6rem;
+  margin: 0;
+
+  background: linear-gradient(
+    to right,
+    #a259ff,
+    #d63eff,
+    #ff0080
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 6. Ejemplo de subtítulo */
+.subtitulo {
+    font-family: '_CameraPlainVariable_83c9a9',
+               '_CameraPlainVariable_Fallback_83c9a9',
+               sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #6b8fac;
+  margin: 0;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* 1. Contenedor de botones justo debajo del subtítulo */
+.botones {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* 2. Botón principal (gradient) */
+.boton1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #a259ff, #ff0080);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.boton1:hover {
+  opacity: 0.9;
+}
+
+/* 3. Botón secundario (outline) */
+.boton2 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: transparent;
+  border: 1px solid #32335f;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  font-size: 1.0rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.boton2:hover {
+  border-color: #ff0080;
+  color: #ff0080;
+}
+
+/* 4. Iconos dentro de los botones */
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+.icon-arrow {
+  stroke-linecap: round;
+}
+.icon-play {
+  fill: currentColor;
+}
+
+/* 7. Estadísticas bajo los botones */
+.stats {
+  display: flex;
+  gap: 4rem;
+  margin-top: 2.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b8fac;
+  margin-top: 0.25rem;
+}
+
+/* Botones más grandes */
+.boton1,
+.boton2 {
+  padding: 1rem 3rem;        /* antes 0.75rem 1.5rem */
+  font-size: 1.125rem;       /* antes 1rem */
+}
+
+/* Si quieres un ancho mínimo uniforme */
+.boton1,
+.boton2 {
+  min-width: 180px;          /* ajusta a tu gusto */
+}
+
+/* Contenedor para las 3 tarjetas */
+.image-wrapper {
+  position: relative;
+  width: 400px;    /* ajusta al ancho deseado */
+  height: 400px;   /* ajusta a la altura deseada */
+}
+
+/* Estilos comunes */
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 70%;
+  width: 100%;
+  height: auto;
+  max-width: 300px;             /* controla tamaño base */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+/* Tarjeta izquierda (detrás y más pequeña) */
+.image-wrapper img:nth-child(1) {
+  transform: translate(-400px, 30px) scale(0.8) rotate(-5deg);
+  z-index: 1;
+}
+
+/* Tarjeta central (frontal y a tamaño normal) */
+.image-wrapper img:nth-child(2) {
+  transform: translate(-50%, 0) scale(1) rotate(0deg);
+  z-index: 2;
+}
+
+/* Tarjeta derecha (detrás y más pequeña) */
+.image-wrapper img:nth-child(3) {
+  transform: translate(80px, 30px) scale(0.8) rotate(5deg);
+  z-index: 1;
+}
+
+/* 8. Animaciones “flotantes” para cada tarjeta */
+@keyframes float-left {
+  0%, 100% {
+    transform: translate(-400px, 30px) scale(0.8) rotate(-5deg);
+  }
+  50% {
+    transform: translate(-400px, 20px) scale(0.8) rotate(-5deg);
+  }
+}
+@keyframes float-center {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -10px) scale(1) rotate(0deg);
+  }
+}
+@keyframes float-right {
+  0%, 100% {
+    transform: translate(80px, 30px) scale(0.8) rotate(5deg);
+  }
+  50% {
+    transform: translate(80px, 20px) scale(0.8) rotate(5deg);
+  }
+}
+
+/* 9. Aplica la animación a cada imagen */
+.image-wrapper img:nth-child(1) {
+  animation: float-left 9s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.image-wrapper img:nth-child(2) {
+  animation: float-center 4.0s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.image-wrapper img:nth-child(3) {
+  animation: float-right 4.0s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.neon-border {
+  scale: 0.8;
+  width: 100%;
+  max-width: 1000px;
+  margin: 54px auto;
+  padding: 4px;
+  border-radius: 30px;
+  background: linear-gradient(270deg, #a259ff, #ff0080, #a259ff);
+  background-size: 400% 400%;
+  animation: borderGradient 3s linear infinite;
+  box-shadow: 0 0 28px 3px #ff008060, 0 0 48px 2px #a259ff40;
+}
+
+@keyframes borderGradient {
+  0% { background-position: 0% 50% }
+  100% { background-position: 100% 50% }
+}
+
+.wallets-section {
+  width: 100%;
+  background: #0d0e20;
+  border-radius: 26px;
+  box-sizing: border-box;
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+/* Cabecera */
+.wallets-header h2 {
+  font-size: 2.5rem;        /* antes 2.5rem */
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;    /* antes 0.5rem */
+}
+.wallets-header p {
+  font-size: 1.5rem;      /* antes 1.125rem */
+  color: #6b8fac;
+  margin-bottom: 2.5rem;  /* antes 2rem */
+}
+
+/* Lista de tarjetas */
+.wallets-list {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;             /* antes 2.5rem */
+  flex-wrap: wrap;
+}
+
+/* Cada tarjeta */
+.wallet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;          /* un pelín más espacio */
+}
+
+/* Icono con borde y fondo */
+.wallet-icon {
+  width: 80px;           /* antes 80px */
+  height: 80px;          /* antes 80px */
+  border: 4px solid;      /* antes 3px */
+  border-radius: 16px;    /* antes 16px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.wallet-icon img {
+  width: 60px;            /* antes 64px */
+  height: 60px;           /* antes 64px */
+  object-fit: contain;
+}
+
+.wallet-name {
+  font-size: 1.0rem;      /* antes 1rem */
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 0.7rem;
+}
+
+/* Colores de borde por clase */
+.wallet-icon.phantom  { border-color: #a259ff; }
+.wallet-icon.solflare { border-color: #ff7722; }
+.wallet-icon.ledger   { border-color: #2bd9a8; }
+.wallet-icon.torus    { border-color: #00b0ff; }
+.wallet-icon.slope    { border-color: #ff4eaa; }
+
+.how-container {
+  width: 100%;
+  max-width: 3000px;          /* Más ancho */
+  margin: 90px auto 0 auto;
+  padding: 80px 40px 64px 40px; /* Más padding */
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  margin-top: 200px;
+  margin-bottom: 100px; /* Espacio al final */
+}
+
+.how-title {
+  text-align: center;
+  font-size: 3.5rem;         /* Más grande */
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+  z-index: 3;
+  margin-top: 20px; /* Espacio arriba */
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a259ff, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.how-subtitle {
+  color: #8fa2c8;
+  text-align: center;
+  font-size: 1.5rem;         /* Más grande */
+  margin-bottom: 3.5rem;
+}
+
+.how-steps {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 100px;  /* ajustá este valor a gusto */
+}
+
+
+.how-step {
+  width: 320px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.how-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -80px;    /* la mitad del gap */
+  top: 58%;
+  transform: translateY(-50%);
+  width: 80px;     /* largo de la línea */
+  height: 3px;
+  background: linear-gradient(90deg, #a259ff 0%, #ff0080 100%);
+  border-radius: 2px;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+
+.how-step-number {
+  width: 78px;               /* Más grande */
+  height: 78px;
+  background: linear-gradient(135deg, #a259ff, #ff0080);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.1rem;         /* Número más grande */
+  font-weight: 900;
+  margin-bottom: 26px;
+  margin-top: 6px;
+  box-shadow: 0 8px 32px rgba(162,89,255,0.14);
+}
+
+.how-step-title {
+  font-size: 1.6rem;         /* Más grande */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.how-step-desc {
+  color: #c9d1eb;
+  font-size: 1.15rem;        /* Más grande */
+  text-align: center;
+  line-height: 1.5;
+}
+
+.how-separator {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #a259ff 0%, #ff0080 100%);
+  align-self: center;
+  border-radius: 2px;
+  opacity: 0.8;
+  margin: 0 0;   /* No uses margin horizontal */
+}
+
+
+/* --------------------------------------------------
+   Estilos para el cuestionario personalizado
+   -------------------------------------------------- */
+
+/* Contenedor principal */
+/* --------------------------------------------------
+   1) Contenedor general
+   -------------------------------------------------- */
+.encuesta-contenedor {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0;
+}
+
+/* Título principal encima del formulario */
+.encuesta-contenedor > h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #A259FF, #FF0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --------------------------------------------------
+   2) Card/Formulario
+   -------------------------------------------------- */
+.formulario-personalizacion {
+  background: #0F111A;
+  border: 1px solid #262736;
+  border-radius: 12px;
+  padding: 2rem 2.5rem 3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Header de la card */
+.formulario-personalizacion .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.70rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+.formulario-personalizacion .card-header .icon {
+  color: #FFC700;
+}
+
+/* --------------------------------------------------
+   3) Campos básicos
+   -------------------------------------------------- */
+/* grid de dos columnas para Nombre y Edad */
+.grid-dos-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+/* cada campo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.campo label {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+.sexo{
+  margin-top: 20px;
+}
+.campo input,
+.campo select {
+  background: #0d0e20;
+  border: 1px solid #FF0080;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.campo input::placeholder {
+  color: #6E6F8C;
+}
+.campo input:focus,
+.campo select:focus {
+  border-color: #0d0e20;
+}
+
+/* --------------------------------------------------
+   4) Distribución de monedas
+   -------------------------------------------------- */
+.campo-distribucion {
+  background: #0d0e20;
+  border: 2px solid #FF0080;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem 1rem;
+  margin-bottom: 2.5rem;
+  margin-top: 40px;
+}
+.campo-distribucion legend {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fbf7f9;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: rem;
+}
+.campo-distribucion .restantes {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #f6f5f7;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.campo-distribucion .restantes .alerta {
+  color: #FF220C;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------
+   5) Sliders
+   -------------------------------------------------- */
+.campo-distribucion .subcampo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.0rem;
+}
+.campo-distribucion .subcampo:last-child {
+  margin-bottom: 0;
+}
+.campo-distribucion .subcampo label {
+  flex: 0 0 80px;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+}
+.campo-distribucion .subcampo input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 7px;
+  background: linear-gradient(90deg, #A259FF, #FF0080);
+  border-radius: 3px;
+  margin: 0 1rem;
+  outline: none;
+  /* Slider fill handled via JS binding value ➜ see nota al final */
+}
+.campo-distribucion .subcampo input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fdfefe;
+  border: 2px solid #FF0080;
+  cursor: pointer;
+  margin-top: 0px;
+}
+.campo-distribucion .subcampo input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f7f7f7;
+  border: 2px solid #FF0080;
+  cursor: pointer;
+}
+.campo-distribucion .subcampo .valor {
+  width: 32px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 300px;
+}
+
+/* --------------------------------------------------
+   6) Botón principal
+   -------------------------------------------------- */
+.formulario-personalizacion button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #A259FF, #FF0080);
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.formulario-personalizacion button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.formulario-personalizacion button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------
+   7) Responsive
+   -------------------------------------------------- */
+@media (max-width: 600px) {
+  .grid-dos-inputs {
+    grid-template-columns: 1fr;
+  }
+  .campo-distribucion .subcampo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* contenedor referencias */
+:root {
+  --bg: #0F111A;
+  --container: #16171F;
+  --border: #262736;
+  --text-main: #FFFFFF;
+  --text-sec: #A5A7BC;
+  --grad: linear-gradient(90deg, #4F46E5, #EC4899);
+}
+
+.referencias {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;  /* menos espacio a los costados */
+  color: var(--text-main);
+  padding: 2rem;
+  font-family: sans-serif;
+  margin-bottom: 200PX;
+}
+
+.titulo {
+  font-size: 2rem;
+  text-align: center;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+  text-align: left;
+  color: var(--text-sec);
+  margin-bottom: 2rem;
+}
+
+/* GRID DOS COLUMNAS */
+.grid-dos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* TARJETAS */
+.card {
+  background: var(--container);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+/* HEADER TARJETA */
+.card-header {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.icon.gender      { background: #3B82F6; }  /* azul */
+.icon.housing     { background: #10B981; }  /* verde */
+.icon.distribution{ background: #FBBF24; }  /* amarillo */
+.icon.crown       { background: #8B5CF6; }  /* morado */
+
+/* CUERPO TARJETA */
+.card-body .item {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  flex-wrap: nowrap; /* evita salto de línea */
+}
+
+
+.card-body .item img {
+  width: 100px;
+  height: 40px;
+  margin-left: auto;
+}
+
+/* DISTRIBUCIÓN */
+.distribucion .descripcion {
+  color: var(--text-sec);
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.paleta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  scale: 1.7;
+  position: relative;
+  left: 300px;
+  margin-bottom: 20px;
+}
+
+.paleta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.square.pareja  { background: #FF220C; }
+.square.estudio { background: #F3BB06; }
+.square.deporte { background: #1A7102; }
+.square.familia { background: #452800; }
+.square.amigos  { background: #3ED3BA; }
+
+.square:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0);
+}
+/* RAREZA */
+.rareza-section .grid-cuatro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.carta {
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.carta .emoji {
+  font-size: 1.4rem;
+}
+
+.carta.raro {
+  background: #FFF9EB;
+  color: #1F2937;
+}
+
+.carta.comun {
+  background: #E8F1FF;
+  color: #1F2937;
+}
+
+.carta.epico {
+  background: #F2E8FF;
+  color: #1F2937;
+}
+
+.carta.legendario {
+  background: #FFF4E0;
+  color: #1F2937;
+}
+
+.card.distribucion {
+  margin-bottom: 30px;
+}
+
+.gallery {
+  margin: 2rem auto;
+  max-width: 100%;
+  margin-bottom: 25%;
+}
+
+.gallery-filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.gallery-filters select,
+.gallery-filters button {
+  background: #0F111A;
+  color: #fff;
+  border: 1px solid #500649;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.gallery-filters select:focus,
+.gallery-filters button:focus {
+  outline: none;
+  border-color: #A259FF;
+}
+.gallery-filters button:hover {
+  background: #262736;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(320px, 1fr));
+  row-gap: 24rem;    /* mismo efecto que margin-bottom de .gallery-item */
+  justify-items: center;
+  column-gap: -50px;
+
+}
+.gallery-item {
+  transform: scale(0.6);
+  margin: 0;        /* si tenía margin, ponlo a 0 ó 0.25rem */
+  transform-origin: top center;
+  /* ya no necesitas margin-bottom aquí */
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arte-texto {
+  position: relative;
+  top: 550px;
+  text-align: center;
+}
+
+.arte-nombre {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: -10px;
+}
+
+.arte-rareza {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #a4a4a4;
+}
+
+/* manu */
+.digital-future {
+  position: relative;
+  left: 200px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  max-width: 1500px;
+  margin-top: 100px;
+  margin-bottom: 200px;
+
+}
+
+.future-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.future-subtitle {
+  font-size: 1.2rem;
+  color: #c4c4c4;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+
+.future-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.future-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.future-card:hover {
+  transform: translateY(-8px);
+}
+
+.future-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.future-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.future-card p {
+  font-size: 1rem;
+  color: #dddddd;
+}
+
+@media (min-width: 768px) {
+  .future-cards {
+    flex-direction: row;
+  }
+}
+
+/* contenedor principal del NFT activo */
+.arte-principal {
+  max-width: 480px;
+  margin: 2rem auto 3rem;
+  padding: 1.5rem;
+  border-radius: 30px;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: 200px;
+
+}
+
+/* Header */
+.arte-principal .nft-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #4F46E5, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Marco y badge */
+.nft-frame-container {
+  position: relative;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 13rem;
+  height: 600px;
+  background: #0d0e20;
+  box-shadow: 0px 0px 25px rgba(212, 28, 145, 0.5);
+
+}
+.nft-frame-container .arte-container {
+  position: absolute;
+  /* Ajusta estos valores hasta que encaje perfectamente: */
+  top: -1rem;     /* distancia desde la parte superior del marco */
+  left: 50%;     /* centrado horizontal */
+  transform: translateX(-50%);
+  margin: 0;     /* anulamos los márgenes por defecto */
+  /* Si tu arte tiene un width fijo (320px), no hace falta width aquí */
+}
+
+/* Opcional: si quieres recortar cualquier exceso fuera del marco: */
+.nft-frame-container {
+  overflow: visible;
+}
+
+.frame-wrapper {
+  position: relative;
+  display: inline-block;  /* asegura que el ancho sea el del marco */
+  overflow: visible;      /* deja que la badge sobresalga sin recorte */
+}
+
+/* La badge posicionada contra el wrapper */
+.frame-wrapper .badge {
+  position: absolute;
+  bottom: 0rem;       /* ajusta hasta que quede justo fuera */
+  right:  -0.75rem;       /* idem hacia la derecha */
+  background: linear-gradient(90deg, #4F46E5, #EC4899);
+  color: #fff;
+  padding: 0.25rem 0.95rem;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  z-index: 10;            /* sobre el marco */
+}
+/* Botones */
+/* Asegúrate de que este fichero esté importado desde NFTDisplay.svelte */
+
+/* Contenedor de botones */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Estilo de cada botón */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid #262736;
+  border-radius: 6px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Hover */
+.btn:hover {
+  background: #262736;
+  color: #fff;
+}
+
+/* Iconos dentro de botones */
+.icon {
+  display: block;
+}
+
+
+
+/* Contenedor de sección */
+.market-section {
+  width: 100%;               /* usa 100%, no 100vw */
+  max-width: 1440px;         /* límite en pantallas grandes */
+  margin: 0 auto;            /* centrar horizontal */
+  padding: 4rem 2rem;        /* espacios arriba/abajo y laterales */
+  overflow-x: hidden;  
+}
+
+/* market.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1. Market wrapper corregido */
+.market-section {
+  width: 100%;               /* ocupa todo el ancho del contenedor padre */
+  max-width: 1440px;         /* límite en desktop */
+  margin: 0 auto;            /* centra horizontalmente */
+  padding: 4rem 2rem;        /* espacios arriba/abajo y laterales */
+  overflow: visible;         /* deja que nada genere scroll interno */
+  /* (elimina cualquier width:100vw que pudieras tener) */
+}
+
+/* — Texto pequeño antes del título — */
+.subheading {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* — Cabecera: título y botón — */
+.market-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.market-header h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.view-all-btn {
+  background: transparent;
+  border: 2px solid #d633ff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.view-all-btn:hover {
+  background: #d633ff;
+  color: #fff;
+}
+
+/* — Grid de cards: 4 columnas — */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* — Cada card — */
+.card {
+  background: #1a1a2e;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* — Imagen con ratio 4:3 y el contador de likes — */
+.card-image {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* ratio 4:3 */
+}
+.card-image img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.likes {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0,0,0,0.6);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #fff;
+}
+.likes svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+  fill: #ff6b81;
+}
+
+/* — Cuerpo de la card — */
+.card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* — Título + avatar + autor — */
+.card-title-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  object-fit: cover;
+}
+.card-title-author h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+.card-title-author .author {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
+/* — Estado (On Sale) y precio — */
+.status-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #f39c12;
+}
+.status svg {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+}
+.price {
+  text-align: right;
+  line-height: 1.2;
+}
+.price .eth {
+  font-weight: bold;
+}
+.price .usd {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* — Botón “Buy Now” — */
+.buy-btn {
+  margin-top: auto;
+  padding: 0.75rem;
+  border: 2px solid #d633ff;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.buy-btn:hover {
+  background: #d633ff;
+  color: #fff;
+}
+
+/* — Responsive — */
+/* Tablets: 2 columnas */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Móviles: 1 columna */
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* market.css */
+
+/* — Sección centrada con espacios laterales — */
+.market-section {
+  padding: 4rem 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: 'Gabarito', sans-serif;
+}
+
+/* — Texto pequeño antes del título — */
+.subheading {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* — Cabecera: título y botón — */
+.market-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.market-header h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.view-all-btn {
+  background: transparent;
+  border: 2px solid #d633ff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.view-all-btn:hover {
+  background: #d633ff;
+  color: #fff;
+}
+
+/* — Grid de cards: 4 columnas — */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* — Cada card — */
+.card {
+  background: #1a1a2e;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* — Imagen con ratio 4:3 y el contador de likes — */
+.card-image {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* ratio 4:3 */
+}
+.card-image img {
+  position: absolute;
+  top: 0; left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.likes {
+  position: absolute;
+  top: 15rem;
+  right: 1rem;
+  background: rgba(0,0,0,0.6);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #fff;
+}
+.likes svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+  fill: #ff6b81;
+}
+
+/* — Cuerpo de la card — */
+.card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* — Título + avatar + autor — */
+.card-title-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  object-fit: cover;
+}
+.card-title-author h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+.card-title-author .author {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
+/* — Estado (On Sale) y precio — */
+.status-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #f39c12;
+}
+.status svg {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+}
+.price {
+  text-align: right;
+  line-height: 1.2;
+}
+.price .eth {
+  font-weight: bold;
+}
+.price .usd {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* — Botón “Buy Now” — */
+.buy-btn {
+  margin-top: auto;
+  padding: 0.75rem;
+  border: 2px solid #d633ff;
+  background: transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.buy-btn:hover {
+  background: #d633ff;
+  color: #fff;
+}
+
+/* — Responsive — */
+/* Tablets: 2 columnas */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Móviles: 1 columna */
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer wrapper */
+.footer {
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+  color: #fff;
+  font-family: 'Gabarito', sans-serif;
+  background: linear-gradient(
+    to bottom right,
+    #000429 80%,
+    #72023a 100%
+  );
+}
+
+/* Contenedor centrado */
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Columna de logo y descripción */
+.footer-logo-col {
+  margin-top: 30px;
+  margin-left: 50px;
+  flex: 2;
+  min-width: 240px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo span {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.footer-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+/* Iconos sociales */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #aaa;
+  font-size: 1.2rem;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 0.5rem;
+}
+.footer-social a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+/* Columnas de links */
+.footer-links {
+  flex: 1;
+  min-width: 160px;
+}
+.footer-links h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.footer-links ul {
+  list-style: none;
+}
+.footer-links ul li {
+  margin-bottom: 0.75rem;
+}
+.footer-links ul li a {
+  margin-left: -5px;
+  text-decoration: none;
+  color: #d2d2d2;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+/* Copyright */
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 2rem;
+}
+
+.referencias-minimal {
+  position: relative;
+  background: #0d0e20;
+  padding: 10rem 2rem;
+  border-radius: 24px;
+  max-width: 1450px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin-bottom: 200px;
+}
+
+.referencias-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Cada ítem libre para ubicar */
+.referencia-bloque {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+/* Ejemplo: estilos visuales */
+.referencia-bloque img {
+  width: 100px;
+  height: 48px;
+  object-fit: contain;
+}
+.square {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+.square.pareja  { background: #FF220C; }
+.square.estudio { background: #F3BB06; }
+.square.deporte { background: #1A7102; }
+.square.familia { background: #452800; }
+.square.amigos  { background: #3ED3BA; }
+
+.carta {
+  background: #1f1f2f;
+  border-radius: 8px;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+  width: 100px;
+  color: #fff;
+}
+.carta .emoji {
+  font-size: 1.5rem;
+}
+.carta.raro        { background: #FFF9EB; color: #1F2937; }
+.carta.comun       { background: #E8F1FF; color: #1F2937; }
+.carta.epico       { background: #F2E8FF; color: #1F2937; }
+.carta.legendario  { background: #FFF4E0; color: #1F2937; }
+
+.referencia-bloque.generoH {
+  top: -100px;
+  left: 30px;
+  scale: 1.3;  /* Aumenta el tamaño */
+}
+.referencia-bloque.generoM {
+  top: -95px;
+  left: 190px;
+  scale: 1.3;  /* Aumenta el tamaño */
+}
+.referencia-bloque.vivienda {
+  top: 30px;
+  left: 125px;
+  scale: 1.3;  /* Aumenta el tamaño */
+}
+img.tornillo1 {
+  top:25px;
+  width: 35px;     /* ajustá el tamaño que quieras */
+  height: auto;    /* mantiene la proporción */
+  object-fit: contain;
+}
+
+.referencia-bloque.pareja {
+  top: -30px;
+  left: 400px;
+}
+.referencia-bloque.estudio {
+  top: -30px;
+  left: 555px;
+}
+.referencia-bloque.deporte {
+  top: -30px;
+  left: 700px;
+}
+.referencia-bloque.familia {
+  top: -30px;
+  left: 836px;
+}
+.referencia-bloque.amigos {
+  top: -30px;
+  left: 970px;
+}
+.referencia-bloque.rareza.raro{
+  top: -120px;
+  left: 1130px;
+}
+.referencia-bloque.rareza.comun{
+  top: -120px;
+  left: 1280px;
+}
+.referencia-bloque.rareza.epico{
+  top: 20px;
+  left: 1280px;
+}
+.referencia-bloque.rareza.legendario{
+  top: 20px;
+  left: 1130px;
+}
+
+.carta {
+  height: 100px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  /* o 100% si están en un grid con altura fija */
+}
+.carta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0);
+}
+.titulo-distribucion {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 600;
+  top: -100px;
+  left: 30px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
