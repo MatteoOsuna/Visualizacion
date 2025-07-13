@@ -829,16 +829,16 @@
       </p>
       <div class="footer-social">
         <a href="https://www.youtube.com/@Rarible" aria-label="YouTube">
-          <img src="public/images/yt.png" alt="YouTube" />
+          <img src="/images/yt.png" alt="YouTube" />
         </a>
         <a href="https://x.com/rarible" aria-label="Twitter">
-          <img src="public/images/tw.png" alt="Twitter" />
+          <img src="/images/tw.png" alt="Twitter" />
         </a>
         <a href="https://www.facebook.com/rarible/?locale=es_LA" aria-label="Facebook">
-          <img src="public/images/fb.png" alt="Facebook" />
+          <img src="/images/fb.png" alt="Facebook" />
         </a>
         <a href="https://rarible.com/" aria-label="Google+">
-          <img src="public/images/gg.png" alt="Google+" />
+          <img src="/images/gg.png" alt="Google+" />
         </a>
       </div>
     </div>
