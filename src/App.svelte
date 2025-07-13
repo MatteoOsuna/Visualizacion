@@ -259,8 +259,8 @@
 
 <div class="full-box">
   <div class="text-wrapper">
-    <h1 class="titulo-principal">Conoce El Mundo Del</h1>
-    <h1 class="titulo-principal2">Arte Digital Con SOL</h1>
+    <h1 class="titulo-principal">Conoce el mundo del</h1>
+    <h1 class="titulo-principal2">Arte Digital con SOL</h1>
     <p class="subtitulo">
       Explora el mercado de arte digital más grande del mundo. Compra, vende y descubre NFTs exclusivos de artistas talentosos de todo el mundo.
     </p>
