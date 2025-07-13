@@ -239,8 +239,8 @@
   <!-- Navegación (solo diseño) -->
   <nav class="nav">
     <a href="/explorar">Explorar</a>
-    <a href="/colecciones">Colecciones</a>
-    <a href="/artistas">Artistas</a>
+    <a href="/colecciones">Bibloteca</a>
+    <a href="/artistas">Mercado</a>
     <a href="/crear">Crear</a>
   </nav>
 
@@ -327,7 +327,7 @@
       <div class="how-step-number">02</div>
       <div class="how-step-title">Descarga tu Arte Digital</div>
       <div class="how-step-desc">
-        Completa la encuesta para personalizar tu arte digital y hacerlo único
+        Descarga tu arte digital personalizado y guárdalo en tu dispositivo.
       </div>
     </div>
 
@@ -335,9 +335,9 @@
          data-aos="fade-right"
          data-aos-delay="700">
       <div class="how-step-number">03</div>
-      <div class="how-step-title">Descarga y comparte</div>
+      <div class="how-step-title">Conoce y aprende</div>
       <div class="how-step-desc">
-        Descarga tu Arte figital personalizado y compártelo con tus amigos
+        Explora el mundo de el arte digital mediante graficos, conoce a otros artistas y aprende sobre NFTs.
       </div>
     </div>
 
@@ -347,7 +347,7 @@
       <div class="how-step-number">04</div>
       <div class="how-step-title">Colecciona y vende</div>
       <div class="how-step-desc">
-        Construye tu colección y revende tus NFTs cuando quieras
+        Construye tu colección y revende tus artes digitales cuando quieras
       </div>
     </div>
   </div>
