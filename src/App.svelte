@@ -337,7 +337,7 @@
       <div class="how-step-number">03</div>
       <div class="how-step-title">Conoce y aprende</div>
       <div class="how-step-desc">
-        Explora el mundo de el arte digital mediante graficos, conoce a otros artistas y aprende sobre NFTs.
+        Explora el mundo de el arte digital mediante graficos        .
       </div>
     </div>
 
@@ -445,7 +445,7 @@
 
     <!-- 6) Botón Generar -->
     <button type="submit" disabled={monedasRestantes !== 0}>
-      ✨ Generar Mi NFT Personalizado
+      ✨ Generar Mi Arte Digital Personalizado
     </button>
   </form>
 </section>
