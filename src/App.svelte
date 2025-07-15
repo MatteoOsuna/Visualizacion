@@ -96,28 +96,28 @@
       nombre: "Luna",
       sexo: "femenino",
       viveSolo: "no",
-      rareza: "legendario",
+      rareza: "Legendario",
       counts: { pareja: 30, amigos: 25, familia: 20, estudio: 15, deporte: 10 }
     },
     {
       nombre: "Axel",
       sexo: "masculino",
       viveSolo: "sí",
-      rareza: "epico",
+      rareza: "Épico",
       counts: { pareja: 10, amigos: 35, familia: 25, estudio: 20, deporte: 10 }
     },
     {
       nombre: "Sofía",
       sexo: "femenino",
       viveSolo: "no",
-      rareza: "comun",
+      rareza: "Común",
       counts: { pareja: 5, amigos: 15, familia: 40, estudio: 30, deporte: 10 }
     },
     {
       nombre: "Tomás",
       sexo: "masculino",
       viveSolo: "sí",
-      rareza: "raro",
+      rareza: "Raro",
       counts: { pareja: 25, amigos: 25, familia: 25, estudio: 15, deporte: 10 }
     }
   ].map(item => {
@@ -176,10 +176,10 @@
     const distribucion = generarDistribucion(counts);
 
     let rarezaVal = '';
-    if (edad <= 18) rarezaVal = 'raro';
-    else if (edad <= 40) rarezaVal = 'comun';
-    else if (edad <= 80) rarezaVal = 'epico';
-    else rarezaVal = 'legendario';
+    if (edad <= 18) rarezaVal = 'Raro';
+    else if (edad <= 40) rarezaVal = 'Común';
+    else if (edad <= 80) rarezaVal = 'Épico';
+    else rarezaVal = 'Legendario';
 
     arteProps = { distribucion, nombre, rareza: rarezaVal, sexo, viveSolo };
     showArte = true;
