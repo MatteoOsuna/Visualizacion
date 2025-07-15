@@ -38,6 +38,7 @@ html {
   font: inherit;
   cursor: pointer;
   padding: 0;
+  color: #faf8f8;
   margin: 0 1rem;        /* ajusta el espacio horizontal */
   font-size: 1rem;
   transition: color 0.2s;
