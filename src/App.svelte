@@ -6,6 +6,35 @@
   import { onMount } from 'svelte';
   import html2canvas from 'html2canvas';
 
+  // Array para guardar la data de cada slide. Cambiar cada uno con el epígrafe específico para cada slide.
+  const slides = [
+    "<strong>Cada burbuja representa las redes de nfts globales</strong> <br>",
+    "<strong>Esta es la red de Ethereum:</strong><br> Vemos como hay Nfts que tienen mucho mas valor que otros, esto se debe a modas o simplemente a campañas de marketing.",
+    "<strong>El mercado de nfts esta en crecimiento y estas son las redes con mas MarketCap.</strong><br>Cada red tiene a su publico.",
+    "<strong>Ahora vemos la red de Base.</strong><br>Es una red no tan conocida pero con mucho capital invertido.",
+    "<strong>Nos estamos moviendo por todas las redes y sus nfts.</strong><br> ",
+    "<strong>Esta es una de las mas conocidas, la red de BitCoin, muchos grandes Nfts son de esta red </strong><br>.",
+    "<strong>Una vez que recorrimos todas las opciones de redes globales vamos a la que mas nos gusta.</strong><br> La red de solana, aca vas a poder vender tu Nft de Digital Art creado arriba.",
+    "<strong>La red de solana es donde TU nft tiene valor monetario</strong><br> Segun su categoria es el precio y sus variaciones. Una vez visto esto estas listo para poder vender tu arte al mejor precio!.",
+  ]
+  // Array para guardar la data de cada slide. Cambiar cada uno con el epígrafe específico para cada slide.
+  const slides2 = [
+    "<strong>Aca podemos ver un un grafico de la variacion de precio de Digital Art en el ultimo año.</strong><br>",
+    "<strong>Distintos precios del NFT categoria LEGENDARIO</strong> <br>",
+    "<strong>Distintos precios del NFT categoria EPICO</strong> <br>",
+    "<strong>Distintos precios del NFT categoria RARO</strong> <br>",
+    "<strong>Distintos precios del NFT categoria COMUN</strong> <br> Una vez visto esto, pasemos al mercado de subastas.  <br>",
+  ]
+  function loadFlourishScrolly() {
+    const script = document.createElement('script')
+    script.src = "https://cdn.flourish.rocks/flourish-scrolly-v3.1.0.min.js"
+    script.type = "text/javascript"
+    script.onload = () => initFlourishScrolly()
+    document.body.appendChild(script)
+  }
+  onMount(() => {
+    loadFlourishScrolly()
+  });
   const nfts = [
     {
       id: 1,
@@ -252,7 +281,7 @@
   <!-- Navegación (solo diseño) -->
   <nav class="nav">
     <button type="button" on:click={() => scrollToSection('graficos')}>Graficos</button>
-    <button type="button" on:click={() => scrollToSection('biblioteca')}>Bibloteca</button>
+    <button type="button" on:click={() => scrollToSection('biblioteca')}>Bibleoteca</button>
     <button type="button" on:click={() => scrollToSection('mercado')}>Mercado</button>
     <button type="button" on:click={() => scrollToSection('crear')}>Crear</button>
   </nav>
@@ -628,6 +657,58 @@
 </div>
 
 </section>
+
+<h2 id="graficos" style="text-align: center; font-size: 2.5rem; font-weight: 800; margin-top: 3rem; margin-bottom: 1rem; color: white;">
+  Explorando los <span style="background: linear-gradient(90deg, #9d4edd, #e50087); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">mercados de NFTs</span>
+</h2>
+<p style="text-align: center; font-size: 1.2rem; color: #bcbcd6; max-width: 900px; margin: 0 auto 3rem auto;">
+  A continuación te presentamos visualizaciones interactivas que muestran cómo se distribuyen y agrupan los proyectos de NFTs más reconocidos. Deslizá para explorar las distintas redes y categorías que definen este ecosistema digital.
+</p>
+<!-- Contenedor de la story de flourish (scrolly)-->
+<div id="my-wrapper">
+  <!-- Reemplazar el ID de jeemplo por el de la story propia -->
+  <div class="flourish-embed story2" data-src="story/3226981" data-url="https://public.flourish.studio/story/3226981/thumbnail">
+    
+    <!-- <script src="https://public.flourish.studio/resources/embed.js"></script> -->
+  </div>
+
+  <!-- Iteramos sobre las distintas slides del componente de Flourish -->
+  {#each slides as slide, index}
+    <p>
+      {@html slide}
+      <!-- svelte-ignore a11y-missing-content -->
+      <a href={"#story/3226981/slide-" + (index + 1)}></a>
+    </p>
+  {/each}
+</div>
+
+<div class="gradient-transition">
+  <h2 style="text-align: center; font-size: 2.2rem; color: white; margin-bottom: 0.5em;">
+    Evolución de Valor de <span style="color: #e50087;">Tu NFT Personalizado</span>
+  </h2>
+  <p style="text-align: center; color: #b3b3c6; font-size: 1.1rem; max-width: 700px; margin: 0 auto 60px auto;">
+    A continuación podés ver cómo varió el valor de tu NFT en el tiempo, en relación con otros del ecosistema digital. Esta visualización refleja las tendencias que influyen en su precio y proyección.
+  </p>
+</div>
+
+<!-- Contenedor 2 de la story de flourish (scroll fix) -->
+<div id="flourish-container" style="padding: 0; margin: 0;">
+  <div id="my-wrapper2" style="max-width: 1800px; margin: 0 auto;">
+    <div
+      class="flourish-embed story2"
+      data-src="story/3225141"
+      data-url="https://public.flourish.studio/story/3225141/embed"
+    ></div>
+
+    <!-- Iteramos sobre las slides -->
+    {#each slides2 as slide, index}
+      <p>
+        {@html slide}
+        <a href={"#story/3225141/slide-" + (index + 1)}></a>
+      </p>
+    {/each}
+  </div>
+</div>
 
 <section class="market-section" id="mercado">
   <p class="subheading" data-aos="fade-up">Artes mas reconocidos del minteo</p>
