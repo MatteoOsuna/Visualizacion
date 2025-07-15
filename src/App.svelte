@@ -313,7 +313,7 @@
           <path fill="none" stroke="currentColor" stroke-width="2" d="M5 12h14M13 5l7 7-7 7"/>
         </svg>
       </button>
-      <button class="boton2">
+      <button class="boton2" onclick="window.open('https://youtu.be/NU8wygDpnoo', '_blank')">
         <svg class="icon icon-play" viewBox="0 0 24 24">
           <path fill="currentColor" d="M8 5v14l11-7z"/>
         </svg>
