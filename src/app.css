@@ -8,7 +8,9 @@ html, body, #app {
   background: #0d0e20;
   overflow-x: hidden;
 }
- 
+html {
+  scroll-behavior: smooth;
+}
 /* 1. Header */
 .header {
   position: fixed;
@@ -27,6 +29,24 @@ html, body, #app {
   justify-content: space-between;
   overflow: hidden;
 }
+/* footer, app.css o donde controles el header */
+
+.nav button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 1rem;        /* ajusta el espacio horizontal */
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav button:hover {
+  color: #d633ff;        /* efecto hover igual al de un <a> */
+}
+
 /* 2. Logo */
 .logo {
   display: flex;

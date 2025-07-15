@@ -223,6 +223,19 @@
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
+ 
+  function scrollToSection(id) {
+    const headerOffset = 80 + 16;     // alto del header + margen extra
+    const el = document.getElementById(id);
+    if (!el) return;
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -238,10 +251,10 @@
 
   <!-- Navegación (solo diseño) -->
   <nav class="nav">
-    <a href="/explorar">Explorar</a>
-    <a href="/colecciones">Bibloteca</a>
-    <a href="/artistas">Mercado</a>
-    <a href="/crear">Crear</a>
+    <button type="button" on:click={() => scrollToSection('graficos')}>Graficos</button>
+    <button type="button" on:click={() => scrollToSection('biblioteca')}>Bibloteca</button>
+    <button type="button" on:click={() => scrollToSection('mercado')}>Mercado</button>
+    <button type="button" on:click={() => scrollToSection('crear')}>Crear</button>
   </nav>
 
   <!-- Acciones -->
@@ -360,7 +373,7 @@
 <p class="how-subtitle" data-aos="fade-up" data-aos-delay="100">
   Responde algunas preguntas para personalizar tu NFT y hacerlo único.
 </p>
-<section class="encuesta-contenedor" data-aos="fade-up">
+<section class="encuesta-contenedor" id="crear" data-aos="fade-up">
   <!-- Título encima del formulario -->
   <!-- 2) Card/Formulario -->
   <form 
@@ -565,7 +578,7 @@
 </section>
 
 <!-- Galería -->
-<section class="gallery">
+<section id="biblioteca" class="gallery">
   <h2 class="how-title">
     <span class="gradient-text">Galería de Arte Digital</span>
   </h2>
@@ -616,7 +629,7 @@
 
 </section>
 
-<section class="market-section">
+<section class="market-section" id="mercado">
   <p class="subheading" data-aos="fade-up">Artes mas reconocidos del minteo</p>
   <div class="market-header" data-aos="fade-up">
     <h2>Mercado de Arte Digital</h2>
