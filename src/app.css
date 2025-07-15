@@ -1151,11 +1151,7 @@ html {
   color: #dddddd;
 }
 
-@media (min-width: 768px) {
-  .future-cards {
-    flex-direction: row;
-  }
-}
+
 
 /* contenedor principal del NFT activo */
 .arte-principal {
@@ -1442,6 +1438,7 @@ html {
   border: 2px solid #d633ff;
   border-radius: 0.5rem;
   font-size: 1rem;
+  color: #dddddd;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
@@ -1500,6 +1497,7 @@ html {
   background: transparent;
   border: 2px solid #d633ff;
   padding: 0.5rem 1.2rem;
+  color: #dddddd;
   border-radius: 0.5rem;
   font-size: 0.9rem;
   cursor: pointer;
